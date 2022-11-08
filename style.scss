@@ -1,0 +1,94 @@
+@import "reset.css";
+
+$border: 2px solid black;
+
+@mixin list {
+
+    ul {
+    list-style-type: none;
+
+        li {
+            
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    
+}
+
+@mixin text {
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    border: $border;
+    padding: 30px;
+
+    h1 {
+
+        font-size: 20px;
+        border-top: $border;
+        border-bottom: $border;
+        width: 350px;
+        text-transform: capitalize;
+
+        .title {
+            font-size: 70px;
+        }
+    }
+}
+
+nav {
+    border: $border;
+    @include list;
+
+    ul {
+        display: flex;
+
+        li {
+
+            border-right: 1px solid black;
+
+            a {
+                display: block;
+                padding: 10px;
+                text-transform: capitalize;
+            }
+
+            a:hover {
+                background-color: gray;
+            }
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+main {
+    border: $border;
+    width: 100%;
+}
+
+footer {
+    border: $border;
+    @include text;
+    padding: 20px;
+}
