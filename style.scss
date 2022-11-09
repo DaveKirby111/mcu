@@ -1,6 +1,7 @@
 @import "reset.css";
 
 $border: 2px solid black;
+$bg: linear-gradient(darkred, red, darkred);
 
 @mixin list {
 
@@ -19,6 +20,7 @@ $border: 2px solid black;
 
 @mixin text {
     text-align: center;
+    text-transform: capitalize;
 }
 
 * {
@@ -27,6 +29,8 @@ $border: 2px solid black;
 
 html, body {
     height: 100%;
+    font-family: 'Lalezar', cursive;
+    font-family: 'Passion One', cursive;
 }
 
 .container {
@@ -36,16 +40,20 @@ html, body {
 }
 
 header {
-    border: $border;
     padding: 30px;
+    display: flex;
+    align-items: center;
+    background-image: $bg;
 
     h1 {
-
         font-size: 20px;
-        border-top: $border;
-        border-bottom: $border;
+        border-top: 2px solid silver;
+        border-bottom: 2px solid silver;
         width: 350px;
         text-transform: capitalize;
+        margin: 0 auto;
+        color: silver;
+        text-shadow: 2px 2px 2px black;
 
         .title {
             font-size: 70px;
@@ -54,24 +62,26 @@ header {
 }
 
 nav {
-    border: $border;
     @include list;
+    background-image: linear-gradient(gold, yellow, gold);
 
     ul {
         display: flex;
 
         li {
 
-            border-right: 1px solid black;
+            border-right: 1px solid goldenrod;
 
             a {
                 display: block;
                 padding: 10px;
                 text-transform: capitalize;
+                color: black;
             }
 
             a:hover {
-                background-color: gray;
+                background-color: red;
+                color: yellow;
             }
         }
     }
@@ -80,15 +90,32 @@ nav {
 .content {
     display: flex;
     flex: 1;
+    background-image: url("images/shieldbg.jpg");
+    background-size: contain;
 }
 
 main {
-    border: $border;
     width: 100%;
+    background-color: rgba(gray, 50%);
+    color: yellow;
+    
+
+    h2 {
+        @include text;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 30px;
+        text-shadow: 2px 2px 2px black;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
 }
 
 footer {
-    border: $border;
     @include text;
     padding: 20px;
+    background-image: $bg;
+    color: silver;
 }
