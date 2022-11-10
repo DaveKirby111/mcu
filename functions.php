@@ -8,7 +8,7 @@ add_action('after_switch_theme', 'flush_rewrite_rules');
 
 // import styles
 function mcu_styles() {
-    wp_enqueue_style('theme-style', get_template_directory_uri() . "/style.css", array(), '1.0');
+    wp_enqueue_style('theme-style', get_template_directory_uri() . "/style.css", array(), '1.1');
 }
 add_action('wp_enqueue_scripts', 'mcu_styles');
 
@@ -43,6 +43,7 @@ function phase1_post() {
 
         'hierarchical' => true,
         'public' => true,
+        'show_in_rest' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-media-archive',
         'supports' => array('title', 'editor', 'thumbnail')
@@ -153,5 +154,15 @@ function shows_post() {
 }
 
 add_action('init', 'shows_post');
+
+
+// link featured images to custom post type page
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+
+  $html = '<a href="' . get_permalink( $post_id ) . '">' . $html . '</a>';
+  return $html;
+
+}
 
 ?>

@@ -9,6 +9,11 @@ Version: 1.0
   box-sizing: border-box;
 }
 
+img.attachment-thumbnail {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
 html, body {
   height: 100%;
   font-family: "Lalezar", cursive;
@@ -77,6 +82,7 @@ main {
   width: 100%;
   background-color: rgba(128, 128, 128, 0.5);
   color: yellow;
+  padding: 20px;
 }
 main h2 {
   text-align: center;

@@ -34,6 +34,11 @@ $bg: linear-gradient(darkred, red, darkred);
     box-sizing: border-box;
 }
 
+img.attachment-thumbnail {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 html, body {
     height: 100%;
     font-family: 'Lalezar', cursive;
@@ -104,6 +109,7 @@ main {
     width: 100%;
     background-color: rgba(gray, 50%);
     color: yellow;
+    padding: 20px;
     
 
     h2 {
