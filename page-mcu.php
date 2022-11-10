@@ -4,37 +4,39 @@
 
 <main>
 
-<?php
+<?php 
+    
+    $args = array(
 
-$args = array(
+        'post_type' => 'phase1',
+        'post_status' => 'publish',
+        'posts_per_page' => 10,
+        'order' => 'ASC',
 
-    'post_type' => 'ff7characters',
-    'post_status' => 'publish',
-    'posts_per_page' => 10,
-    'order' => 'ASC',
-);
+    );
 
-$phase1 = new WP_Query( $args );
+    $phase1 = new WP_Query( $args );
 
-while ( $phase1->have_posts() ) : $phase1->the_post();
-if ( has_post_thumbnail() ) {
-    $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
-    echo '';
-    the_post_thumbnail('thumbnail');
-    echo '';
-}
+    while( $phase1->have_posts() ) : $phase1->the_post();
+    if ( has_post_thumbnail() ) {
+        $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+        echo '';
+        the_post_thumbnail('thumbnail');
+        echo '';
+    }
 
-echo '<p class="title">';
-echo get_the_title();
-echo '</p>';
+    echo '<p class="title">';
+    echo get_the_title();
+    echo '</p>';
 
-endwhile;
+    endwhile;
 
-wp_reset_postdata(); 
+    wp_reset_postdata();
+    
+    ?>
 
-?>
 
-<p> <?php the_content(); ?> </p>
+    <p><?php the_content(); ?></p>
 
 
 

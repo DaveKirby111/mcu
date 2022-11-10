@@ -28,17 +28,16 @@ header {
   background-image: linear-gradient(darkred, red, darkred);
 }
 header h1 {
-  font-size: 20px;
+  font-size: 40px;
   border-top: 2px solid silver;
   border-bottom: 2px solid silver;
-  width: 350px;
-  text-transform: capitalize;
   margin: 0 auto;
   color: silver;
   text-shadow: 2px 2px 2px black;
 }
 header h1 .title {
-  font-size: 70px;
+  font-size: 80px;
+  text-transform: capitalize;
 }
 
 nav {

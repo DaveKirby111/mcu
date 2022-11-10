@@ -29,7 +29,8 @@
 
             <h1><?php the_title(); ?></h1>
 
-            <img src="images/marvel.jpg" alt="mcu">
+           <img src="http://localhost:8888/MCUsite/wp-content/uploads/2022/11/marvel.jpg" alt="logo">
+            
         </header>
 
             <nav>
@@ -43,6 +44,6 @@
                     )
                     );
                 
-                ?>
+            ?>
                 
             </nav>
