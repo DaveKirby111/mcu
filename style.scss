@@ -35,8 +35,16 @@ $bg: linear-gradient(darkred, red, darkred);
 }
 
 img.attachment-thumbnail {
-    margin-left: 20px;
-    margin-top: 20px;
+   margin-left: 50px;
+   margin-top: 20px;
+   margin-bottom: 50px;
+   width: 200px;
+   height: 200px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 15px;
 }
 
 html, body {
@@ -58,15 +66,15 @@ header {
     background-image: $bg;
 
     h1 {
-        font-size: 40px;
-        border-top: 2px solid silver;
-        border-bottom: 2px solid silver;
+        font-size: 50px;
+        border-top: 5px solid silver;
+        border-bottom: 5px solid silver;
         margin: 0 auto;
         color: silver;
         text-shadow: 2px 2px 2px black;
 
         .title {
-            font-size: 80px;
+            font-size: 90px;
             text-transform: capitalize;
         }
     }
@@ -74,14 +82,14 @@ header {
 
 nav {
     @include list;
-    background-image: linear-gradient(gold, yellow, gold);
+    background-image: linear-gradient(goldenrod, yellow, goldenrod);
 
     ul {
         display: flex;
 
         li {
 
-            border-right: 1px solid goldenrod;
+            border-right: 3px solid black;
 
             a {
                 display: block;
@@ -91,9 +99,12 @@ nav {
             }
 
             a:hover {
-                background-color: red;
-                color: yellow;
+                color: red;
             }
+        }
+
+        li:hover {
+            border-right: 3px solid red;
         }
     }
 }
@@ -116,7 +127,7 @@ main {
         @include text;
         margin-top: 20px;
         margin-bottom: 20px;
-        font-size: 30px;
+        font-size: 40px;
         text-shadow: 2px 2px 2px black;
     }
 
@@ -131,3 +142,13 @@ footer {
     background-image: $bg;
     color: silver;
 }
+
+@media only screen and (max-width: 620px){
+    nav, .content, aside, .main {
+         width: 100%;
+         height: auto;
+         position: relative;
+         margin: 0;
+         
+     }
+ }
